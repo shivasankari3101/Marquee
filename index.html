@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marquee</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap');
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: 'Mukta', sans-serif;
+        }
+        .marquee{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 30px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            background-color: yellow;
+            color: #000;
+        }
+
+        .marquee p{
+            display: inline-block;
+            width: 100%;
+            writing-mode: vertical-rl;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: marquee 10s linear infinite;
+            -webkit-animation: marquee 10s linear infinite;
+            -o-animation: marquee 10s linear infinite ;
+            
+        }
+
+        @keyframes marquee{
+            0%{
+                transform: translate(0,0) rotate(180deg);
+                -webkit-transform: translate(0,0) rotate(180deg);
+                -moz-transform: translate(0,0) rotate(180deg);
+                -o-transform: translate(0,0) rotate(180deg);
+            }
+            100%{
+                transform: translate(0,-100%) rotate(180deg);
+                -webkit-transform: translate(0,-100%) rotate(180deg);
+                -moz-transform: translate(0,-100%) rotate(180deg);
+                -o-transform: translate(0,-100%) rotate(180deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="marquee">
+        <p>The text for animation</p>
+    </div>
+</body>
+</html>
