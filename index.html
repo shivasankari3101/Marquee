@@ -16,7 +16,7 @@
             top: 0;
             left: 0;
             width: 30px;
-            height: 5400px;
+            height:100vh;
             display: flex;
             justify-content: center;
             background-color: #FDBA17;
@@ -29,13 +29,14 @@
             position: absolute;
             display: flex;
             width: 100%;
-            height:5400px;
+            height:540px;
             writing-mode: vertical-rl;
             text-transform: uppercase;
             letter-spacing: 3px;
-            animation: scrolling 10s linear infinite;
-            -webkit-animation: scrolling 10s linear infinite;
-            -o-animation: scrolling 10s linear infinite ;            
+            animation: scrolling 5s linear infinite;
+            -webkit-animation: scrolling 5s linear infinite;
+            -o-animation: scrolling 5s linear infinite ;
+            transition-property: smooth;            
         }
 
         .content li{
@@ -67,10 +68,10 @@
                 -o-transform: translateY(0);
             }
             100%{
-                transform: translateY(-5400px);
-                -webkit-transform: translateY(-5400px);
-                -moz-transform: translateY(-5400px);
-                -o-transform: translateY(-5400px);
+                transform: translateY(-540px);
+                -webkit-transform: translateY(-540px);
+                -moz-transform: translateY(-540px);
+                -o-transform: translateY(-540px);
             }
         }
 
@@ -98,6 +99,17 @@
             <li><img src='images/img_1.png' alt='berry'></li>
             <li><p>Farm cooled fruits</p></li>
             <li><img src='images/img_2.png' alt='cherry'></li>
+
+            <li><p>Freshness seal</p></li>
+            <li><img src='images/img_1.png' alt='berry'></li>
+            <li><p>Farm cooled fruits</p></li>
+            <li><img src='images/img_2.png' alt='cherry'></li>
+
+            <li><p>Freshness seal</p></li>
+            <li><img src='images/img_1.png' alt='berry'></li>
+            <li><p>Farm cooled fruits</p></li>
+            <li><img src='images/img_2.png' alt='cherry'></li>
+
         </div>
         <!-- Content of scrolling -->
     </div>
@@ -106,8 +118,8 @@
     
     <script>
         // Code to repeat the content of marquee
-        var content=document.getElementsByClassName("content")[0].innerHTML;
-        document.getElementsByClassName("content")[0].innerHTML = content.repeat(10);    
+        // var content=document.getElementsByClassName("content")[0].innerHTML;
+        // document.getElementsByClassName("content")[0].innerHTML = content.repeat(10);    
     </script>
 </body>
 </html>
