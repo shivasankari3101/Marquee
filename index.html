@@ -25,11 +25,11 @@
 ;
         }
 
-        .content{
+        .marquee-content{
             position: absolute;
             display: flex;
             width: 80%;
-            height:540px;
+            height:458px;
             writing-mode: vertical-rl;
             text-transform: uppercase;
             letter-spacing: 3px;
@@ -38,14 +38,17 @@
             -moz-animation: scrolling 7s linear infinite ;            
         }
 
-        .content li{
+        .marquee-content li{
             list-style-type: none;
             flex-shrink: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            height:220px;
             transform: rotate(180deg);
+        }
+
+        li:nth-child(odd){
+           height: 156px;
         }
 
         li:nth-child(even){
@@ -53,7 +56,11 @@
             transform: rotate(0deg);
         }
 
-        .content img{
+        li:nth-child(3),li:nth-child(7),:nth-child(11){
+            height: 202px;
+        }
+
+        .marquee-content img{
             width: 100%;
             height: 20px;
            
@@ -67,27 +74,84 @@
                 -moz-transform: translateY(0);
             }
             100%{
-                transform: translateY(-540px);
-                -webkit-transform: translateY(-540px);
-                -moz-transform: translateY(-540px);
+                transform: translateY(-458px);
+                -webkit-transform: translateY(-458px);
+                -moz-transform: translateY(-458px);
             }
         }
 
         /* Mobile view */
 
         @media screen and (max-width:568px) {
-            .marquee{
-                width: 25px;
-            }
 
-            .content{
-                width: 60%;
-            }
 
-            .content img{
+            .marquee-content img{
                 width: 20px;
                 height: 20px;
-           }        
+                transform: rotate(90deg);
+           }
+
+           .marquee{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100vw;
+            height:25px;
+            display: flex;
+            justify-content: center;
+            background-color: #FDBA17;
+            color: #06643E;
+            overflow: hidden;
+        }
+
+        .marquee-content{
+            position: absolute;
+            display: flex;
+            width: 458px;
+            writing-mode:horizontal-tb;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: scrolling 7s linear infinite;
+            -webkit-animation: scrolling 7s linear infinite;
+            -moz-animation: scrolling 7s linear infinite ;
+                        
+        }
+
+        .marquee-content li{
+            transform: rotate(0deg);
+            height: 25px;
+        }
+
+        .marquee-content li:nth-child(even){
+            width: 50px;
+        }
+
+        li:nth-child(odd){
+           width: 156px;
+        }
+
+        li:nth-child(3),li:nth-child(7),:nth-child(11){
+            width: 202px;
+        }
+
+
+        /*Animation for scrolling*/
+
+        @keyframes scrolling{                             
+            0%{
+                transform: translateX(0);
+                -webkit-transform: translateX(0);
+                -moz-transform: translateX(0);
+            }
+            100%{
+                transform: translateX(-458px);
+                -webkit-transform: translateX(-458px);
+                -moz-transform: translateX(-458px);
+            }
+        }
+
+
+
         }
     </style>
 </head>
@@ -96,7 +160,7 @@
     <!-- Marquee container -->
     <div class="marquee">
         <!-- Content of scrolling -->
-        <div class="content">       
+        <div class="marquee-content">       
             <li><p>Freshness seal</p></li>
             <li><img src='images/image_1.svg' alt='berry'></li>
             <li><p>Farm cooled fruits</p></li>
